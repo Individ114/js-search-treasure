@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Search treasure</title>
+  </head>
+  <body>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+    <div class="container">
+      <h1 class="heading" id="headingId">Поиски сокровищ</h1>
+      <img class="map" alt="" id="mapId" src="{{ url_for('static', filename='images/map.jpg') }}">
+      <p class="hint" id="hintId">Кликни по карте</p>
+    </div>
+    <script type=text/javascript src="{{
+  url_for('static', filename='js/jquery.js') }}"></script>
+    <script type=text/javascript src="{{
+  url_for('static', filename='js/script.js') }}">
+    </script>
+  </body>
+</html>
